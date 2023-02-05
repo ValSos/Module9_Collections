@@ -8,7 +8,7 @@ public class MyHashMap<K,V> {
     static final float DEFAULT_LOAD_FACTOR = 0.75f;
 
     public class Node<K,V> {
-        private int h;
+        //private int h;
         private K key;
         private V value;
         private Node<K,V> next;
@@ -16,8 +16,8 @@ public class MyHashMap<K,V> {
         public int hash(K key) {
             int h;
             if (key == null) return 0;
-            else if (key.hashCode() > capacity -1 || key.hashCode() < 0) {
-                h = Math.abs(key.hashCode() % capacity - 1);
+            else if (key.hashCode() >= capacity || key.hashCode() < 0) {
+                h = Math.abs(key.hashCode() % capacity);
             }
             else {
                 h = key.hashCode();
@@ -33,7 +33,7 @@ public class MyHashMap<K,V> {
         public Node(K key, V value){
             this.key = key;
             this.value = value;
-            this.h = hash(key);
+            //this.h = hash(key);
             this.next = null;
         }
 
@@ -77,6 +77,7 @@ public class MyHashMap<K,V> {
             }
         }
         return null;
+
     }
 
     public V remove(K key){
@@ -112,7 +113,7 @@ public class MyHashMap<K,V> {
     public int hash(K key) {
         int h;
         if (key == null) return 0;
-        else if (key.hashCode() > capacity -1 || key.hashCode() < 0) {
+        else if (key.hashCode() >= capacity || key.hashCode() < 0) {
             h = Math.abs(key.hashCode() % capacity);
         }
         else {
@@ -143,18 +144,18 @@ public class MyHashMap<K,V> {
         if(size + 1 >= calculateTreshold()){
             resize();
         }
-        if (table[current.h] == null) {
-            table[current.h] = current;
+        if (table[hash(current.key)] == null) {
+            table[hash(current.key)] = current;
             current.next = null;
             size++;
         }
-        else if (table[current.h].key.equals(key)){
-            table[current.h].value = value;
+        else if (table[hash(current.key)].key.equals(key)){
+            table[hash(current.key)].value = value;
         }
         else {
-            Node <K,V> checkedElement = table[current.h];
+            Node <K,V> checkedElement = table[hash(current.key)];
             for (int i = 1; i <
-                    bucketSize(table[current.h]); i++){
+                    bucketSize(table[hash(current.key)]); i++){
                 checkedElement  = checkedElement.next;
             }
             checkedElement.next = current;
@@ -176,6 +177,7 @@ public class MyHashMap<K,V> {
     public void resize(){
         int newCapacity = 2 * table.length;
         MyHashMap<K,V> newHashMap = new MyHashMap<>(newCapacity);
+        this.capacity = newHashMap.capacity;
         for (Node<K,V> elements:this.table) {
             if (elements != null){
                newHashMap.put(elements.key, elements.value);
@@ -187,7 +189,6 @@ public class MyHashMap<K,V> {
             }
         }
         this.table = newHashMap.table;
-        this.capacity = newHashMap.capacity;
         this.size = newHashMap.size;
     }
 

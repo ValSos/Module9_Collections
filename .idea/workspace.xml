@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f64f3af8-a3ee-4f47-a587-f5eceb044602" name="Changes" comment="my commit">
-      <change afterPath="$PROJECT_DIR$/src/MyCollectionsTest.java" afterDir="false" />
+    <list default="true" id="f64f3af8-a3ee-4f47-a587-f5eceb044602" name="Changes" comment="my commit2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyArrayList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyHashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyHashMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyStack.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +35,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.MyCollectionsTest">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="MyArrayList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MyArrayList" />
       <module name="Module9" />
@@ -50,13 +45,6 @@
     </configuration>
     <configuration name="MyCollectionsTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MyCollectionsTest" />
-      <module name="Module9" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MyHashMap" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MyHashMap" />
       <module name="Module9" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -76,13 +64,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="Module9" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.MyCollectionsTest" />
         <item itemvalue="Application.MyArrayList" />
         <item itemvalue="Application.MyQueue" />
         <item itemvalue="Application.MyLinkedList" />
-        <item itemvalue="Application.MyHashMap" />
       </list>
     </recent_temporary>
   </component>
@@ -102,7 +97,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675527527021</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="my commit2">
+      <created>1675609479668</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675609479668</updated>
+    </task>
+    <task id="LOCAL-00003" summary="my commit2">
+      <created>1675609577589</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675609577589</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -118,7 +127,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="my commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="my commit" />
+    <MESSAGE value="my commit2" />
+    <option name="LAST_COMMIT_MESSAGE" value="my commit2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
