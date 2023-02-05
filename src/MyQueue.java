@@ -26,11 +26,9 @@ public class MyQueue<T> {
     }
 
     public void clear(){
-        Node<T> target = first.getNextElement();
-        for(int i = 0; i < size; i++){
-            target.getNextElement().setPrevElement(target.getPrevElement());
-            target = target.getNextElement();
-        }
+        MyQueue<T> clearQueue = new MyQueue<>();
+        this.first = clearQueue.first;
+        this.last = clearQueue.last;
         size = 0;
     }
 

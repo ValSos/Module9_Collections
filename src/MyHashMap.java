@@ -17,7 +17,7 @@ public class MyHashMap<K,V> {
             int h;
             if (key == null) return 0;
             else if (key.hashCode() > capacity -1 || key.hashCode() < 0) {
-                h = Math.abs(key.hashCode() % capacity);
+                h = Math.abs(key.hashCode() % capacity - 1);
             }
             else {
                 h = key.hashCode();
@@ -54,6 +54,7 @@ public class MyHashMap<K,V> {
             return  key +
                     " : " + value;
         }
+
     }
 
 
@@ -105,7 +106,6 @@ public class MyHashMap<K,V> {
                 }
             }
         }
-
         return needElement;
     }
 
@@ -124,11 +124,13 @@ public class MyHashMap<K,V> {
     public MyHashMap(){
         this.table = new Node[DEFAULT_CAPACITY];
         this.capacity = DEFAULT_CAPACITY;
+        this.size = 0;
     }
 
     public MyHashMap(int capacity){
         this.table = new Node[capacity];
         this.capacity = capacity;
+        this.size = 0;
     }
 
     public int calculateTreshold(){
@@ -138,12 +140,13 @@ public class MyHashMap<K,V> {
 
     public void put(K key, V value) {
         Node<K,V> current = new Node<>(key,value);
-        if(size++ >= calculateTreshold()){
+        if(size + 1 >= calculateTreshold()){
             resize();
         }
         if (table[current.h] == null) {
             table[current.h] = current;
             current.next = null;
+            size++;
         }
         else if (table[current.h].key.equals(key)){
             table[current.h].value = value;
@@ -154,13 +157,11 @@ public class MyHashMap<K,V> {
                     bucketSize(table[current.h]); i++){
                 checkedElement  = checkedElement.next;
             }
-//            while (checkedElement.hasNext()){
-//                checkedElement  = checkedElement.next;
-//            }
             checkedElement.next = current;
             current.next = null;
+            size++;
             }
-        size++;
+
     }
 
     public void clear(){
@@ -187,6 +188,7 @@ public class MyHashMap<K,V> {
         }
         this.table = newHashMap.table;
         this.capacity = newHashMap.capacity;
+        this.size = newHashMap.size;
     }
 
 

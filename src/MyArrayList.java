@@ -37,11 +37,10 @@ public class MyArrayList<E> {
         return (E) elementData[index];
     }
 
-    public Object[] clear(){
+    public void clear(){
         size = 0;
         Object[] clearElementData = new Object[DEFAULT_CAPACITY];
         elementData = clearElementData;
-        return elementData;
     }
 
 

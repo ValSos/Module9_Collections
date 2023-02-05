@@ -56,11 +56,9 @@ public class MyLinkedList<E> {
     }
 
     public void clear(){
-        Node<E> target = first.getNextElement();
-        for(int i = 0; i < size; i++){
-            target.getNextElement().setPrevElement(target.getPrevElement());
-            target = target.getNextElement();
-        }
+        MyLinkedList<E> clearList = new MyLinkedList<>();
+        this.first = clearList.first;
+        this.last = clearList.last;
         size = 0;
     }
 

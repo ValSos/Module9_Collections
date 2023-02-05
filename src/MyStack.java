@@ -22,11 +22,9 @@ public class MyStack <K>{
     }
 
     public void clear(){
-        Node<K> target = first.getNextElement();
-        for(int i = 0; i < size; i++){
-            target.getNextElement().setPrevElement(target.getPrevElement());
-            target = target.getNextElement();
-        }
+        MyStack<K> clearStack = new MyStack<>();
+        this.first = clearStack.first;
+        this.last = clearStack.last;
         size = 0;
     }
 
